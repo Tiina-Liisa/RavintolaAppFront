@@ -5,20 +5,22 @@
   margin-bottom: 10px;
   width: 50%;
   padding-left: 30px;
-  display: flex;
-  justify-content: space-between;
-
 }
+
+
 .App {
   padding-left: 80px;
 }
 
 button{
-  margin: 8px;
   border-radius: 10px;
   background-color: aliceblue;
   border-color: aliceblue;
   border-style: solid;
+  display: inline;
+  float: right;
+  margin-right: 40px;
+
 }
 button:hover{
   background-color: forestgreen;

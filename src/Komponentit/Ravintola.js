@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Arviot from "./Arviot";
 
 class Ravintola extends Component {
     state = {
@@ -7,37 +8,47 @@ class Ravintola extends Component {
         paikkakunta: "",
         osoite: "",
         tyyppi: "",
-        wanted:false
-    }
-    arvio= this.props.arvostelut;
+        wanted:false,
+        arviot: []
 
-    nayta =() => {
-        this.setState({wanted:!this.state.wanted})
+    }
+    haeArvio =()=> {
+            this.setState({arviot:[]})
+
     }
 
-    muutos = () => {
-        return {
-            visibility: this.state.wanted? 'visible': 'hidden'
+        arviot =()=>{
+        this.props.arvostelut.filter(arvio => arvio.ravintola===this.state.id).map((arvio) =>
+    {var taulu = this.state.arviot
+        taulu.push(arvio)
+        this.setState({arviot:[]}, function() {this.setState({arviot:taulu})})
+
+    })};
+
+
+
+   /* nayta =() => {
+        if (this.state.arviot === "") {
+           ({arviot: this.props.arvostelut})
+        } else {
+            this.setState({arviot:""})
         }
     }
-
+*/
 
     render() {
-        console.log(this.props.arvostelut)
         return (
             <div id="ravintola">
                 <div>
-                <p>
-                    {this.props.ravintola.nimi},
-                    {this.props.ravintola.paikkakunta}
-                    {this.props.arvostelut.id}
-                    </p>
-                    </div>
-                   <button onClick={this.nayta}>Lisätietoja</button>
+                    <h4>{this.props.ravintola.nimi} </h4>
+                    <p> Kategoria: {this.props.ravintola.tyyppi}</p>
+                    <p>Osoite: {this.props.ravintola.osoite}, {this.props.ravintola.paikkakunta}
+                    <button onClick={this.arviot}>Näytä arviot</button>
+                    <button onClick={this.haeArvio}> tyhjennä</button></p>
+                </div>
                 <br/>
-                    <div style={this.muutos()}></div>
-
-            </div>
+                <Arviot arviot={this.state.arviot}/>
+                </div>
         );
     }
 }

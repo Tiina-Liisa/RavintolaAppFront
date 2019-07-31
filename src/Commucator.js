@@ -1,10 +1,15 @@
 import axios from 'axios';
 
-const apiURL = "/api/";
+const apiURL = "http://localhost:8080/api/";
 
 export function get(cb) {
-    axios.get(apiURL).then(data =>cb(data.data));
+    axios.get(apiURL + "ravintolat").then(data =>cb(data.data));
 }
+
+export function haeArviot(cb){
+    axios.get(apiURL + "arvostelut").then(data =>cb(data.data));
+}
+
 
 export function poistaRavintola(id) {
     return axios.delete(apiURL + "/")
