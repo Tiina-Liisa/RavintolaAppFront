@@ -5,6 +5,7 @@
   margin-bottom: 10px;
   width: 90%;
   padding-left: 30px;
+  background-color: rgba(255,255,255,0.9);
 }
 .ravintolahaku{
   border-style: groove;
@@ -14,16 +15,26 @@
   width: 60%;
   padding-left: 30px;
   margin-top: 10px;
+  align-content: center;
+  margin-left: 20px;
+  padding-top: 10px;
+}
+.ravintolantiedot {
+  margin-bottom: 3px;
 }
 .arviot{
+
   margin-bottom: 10px;
+}
+.arvionapit{
+  place-content: center;
 }
 
 .App {
   padding-left: 80px;
 }
 
-button{
+.napit{
   border-radius: 10px;
   background-color: aliceblue;
   border-color: aliceblue;
@@ -31,12 +42,31 @@ button{
   display: inline;
   float: right;
   margin-right: 40px;
+}
 
+.arvionappi{
+  border-radius: 10px;
+  background-color: aliceblue;
+  border-color: aliceblue;
+  border-style: solid;
+  margin-left: 20px;
 }
 button:hover{
   background-color: forestgreen;
   cursor: pointer;
 }
+
+.lomake {
+  margin-left: 20px;
+}
+
+button {
+  border-radius: 10px;
+  background-color: aliceblue;
+  border-color: aliceblue;
+  border-style: solid;
+}
+
 #Addbtn {
   padding: 10px;
   width: 25%;
@@ -51,13 +81,37 @@ button:hover{
 }
 
 .App-component {
-  background: url(./Resources/background.jpeg) no-repeat center center fixed;
+  background: url(./Resources/background3.jpg) no-repeat center center fixed;
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #d9d9d9;
+  width: 100%;
+  margin-top: 0px;
 }
 input{
   margin-bottom: 8px;
+}
+/*h1 {*/
+/*  margin-left: 20%;*/
+/*  font-family: SansSerif;*/
+/*  margin-top: 0px;*/
+/*}*/
+body{
+  margin-top: 0px;
+}
+.hyvaa {
+  font-size: x-large;
+  font-family: "Helvetica Neue";
+  text-align: center;
+  color: cadetblue;
+  background-color: rgba(255,255,255,0.9);
+  margin-top: 0px;
+}
+h5{
+  margin-top: 0px;
+}
+.testi {
+  margin-left: 25%;
 }

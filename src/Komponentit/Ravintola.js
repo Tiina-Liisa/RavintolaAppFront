@@ -38,11 +38,10 @@ class Ravintola extends Component {
                 <div>
                     <h4>{this.props.ravintola.nimi} </h4>
                     <p> Kategoria: {this.props.ravintola.tyyppi}</p>
-                    <p>Osoite: {this.props.ravintola.osoite}, {this.props.ravintola.paikkakunta}
-                    <button onClick={this.arviot}>Näytä arviot</button>
-                    <button onClick={this.haeArvio}>Piilota arviot</button></p>
+                    <p className="ravintolantiedot">Osoite: {this.props.ravintola.osoite}, {this.props.ravintola.paikkakunta}
+                    <button className="napit" onClick={this.arviot}>Näytä arviot</button>
+                    <button className="napit" onClick={this.haeArvio}>Piilota arviot</button></p>
                 </div>
-                <br/>
                 <div style={this.muutos()}>
                 <Arviot arviot={this.state.arviot} arvioi={this.props.arvioi} id={this.state.id} totuus={this.arviot}/>
                 </div>
