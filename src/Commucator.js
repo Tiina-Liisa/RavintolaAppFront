@@ -11,14 +11,6 @@ export function haeArviot(cb){
 }
 
 
-export function poistaRavintola(id) {
-    return axios.delete(apiURL + "/")
-}
-
-export function lisaaRavintola(data) {
-    return axios.post(apiURL, {ravintola:data.ravintola});
-}
-
 export function lisaaArvostelu(data){
-    return axios.post(apiURL, {arvio:data.arvio})
+    return axios.post(apiURL + "arvostelut", data)
 }
