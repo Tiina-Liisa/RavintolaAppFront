@@ -41,7 +41,7 @@ class RavintolaBox extends Component {
 
     render() {
         return this.state.ravintolat ? (
-            <div>
+            <div className="testi">
                 <RavintolaList ravintolat={this.state.ravintolat} arvostelut={this.state.arvostelut} haeArviot={this.haeArviot}
                 haeRavintolat={this.haeRavintolat} haeValitut={this.haeValitut} arvioi={(this.arvioi)}/>
             </div>):

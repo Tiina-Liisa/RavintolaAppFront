@@ -17,7 +17,7 @@ class Arviot extends Component {
 
 
                 <li key={key} >
-                    <i> "{value.arvio}"</i>, Arvosana : {value.arvosana}
+                    <i> "{value.arvio}"</i> Arvosana : {value.arvosana}
                 </li>
             )
         })
@@ -25,18 +25,18 @@ class Arviot extends Component {
 
     render() {
         return (
-            <div>
-                <input type="text" placeholder="Kirjoita arvio" onChange={this.uusiArvio}/>
-                <form>
-                    <select name="Arvosana" id="" onChange={this.arvosana} value={this.state.arvosana}>
-                        <option selected="defaultValue" value="5">5</option>
+            <div className="arvionapit">
+                <input type="text" placeholder="Kirjoita arvio" onChange={this.uusiArvio} className="lomake"/>
+
+                    <select name="Arvosana" id="" onChange={this.arvosana} value={this.state.arvosana} className="lomake">
+                        <option value="5">5</option>
                         <option value="4">4</option>
                         <option value="3">3</option>
                         <option value="2">2</option>
                         <option value="1">1</option>
                     </select>
-                </form>
-                <button onClick={this.arvioi}>Arvioi ravintola</button>
+
+                <button className="arvionappi" onClick={this.arvioi}>Arvioi ravintola</button>
             <div className="arviot">
                 {this._renderObject()}
             </div>
