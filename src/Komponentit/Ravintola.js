@@ -13,28 +13,24 @@ class Ravintola extends Component {
 
     }
     haeArvio =()=> {
-            this.setState({arviot:[]})
+            this.setState({arviot:[], wanted:false}
+            )
 
     }
 
-        arviot =()=>{
-        this.props.arvostelut.filter(arvio => arvio.ravintola===this.state.id).map((arvio) =>
-    {var taulu = this.state.arviot
-        taulu.push(arvio)
-        this.setState({arviot:[]}, function() {this.setState({arviot:taulu})})
 
-    })};
-
+    arviot =()=> {
+        var taulu = [];{
+    //    if (this.state.arviot.length === 0) {
+            this.props.arvostelut.filter(arvio => arvio.ravintola === this.state.id).map(arvio => taulu.push(arvio));
+            this.setState({arviot:taulu, wanted:true})}};
 
 
-   /* nayta =() => {
-        if (this.state.arviot === "") {
-           ({arviot: this.props.arvostelut})
-        } else {
-            this.setState({arviot:""})
-        }
-    }
-*/
+        muutos = () =>{
+            return {
+                visibility: this.state.wanted ? 'visible' : 'hidden'
+    }}
+
 
     render() {
         return (
@@ -44,10 +40,12 @@ class Ravintola extends Component {
                     <p> Kategoria: {this.props.ravintola.tyyppi}</p>
                     <p>Osoite: {this.props.ravintola.osoite}, {this.props.ravintola.paikkakunta}
                     <button onClick={this.arviot}>Näytä arviot</button>
-                    <button onClick={this.haeArvio}> tyhjennä</button></p>
+                    <button onClick={this.haeArvio}>Piilota arviot</button></p>
                 </div>
                 <br/>
-                <Arviot arviot={this.state.arviot}/>
+                <div style={this.muutos()}>
+                <Arviot arviot={this.state.arviot} arvioi={this.props.arvioi} id={this.state.id} totuus={this.arviot}/>
+                </div>
                 </div>
         );
     }

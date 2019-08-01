@@ -3,10 +3,21 @@
   border-color: cadetblue;
   border-radius: 10px;
   margin-bottom: 10px;
-  width: 50%;
+  width: 90%;
   padding-left: 30px;
 }
-
+.ravintolahaku{
+  border-style: groove;
+  border-color: cadetblue;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 60%;
+  padding-left: 30px;
+  margin-top: 10px;
+}
+.arviot{
+  margin-bottom: 10px;
+}
 
 .App {
   padding-left: 80px;
@@ -46,4 +57,7 @@ button:hover{
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #d9d9d9;
+}
+input{
+  margin-bottom: 8px;
 }
