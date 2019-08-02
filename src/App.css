@@ -52,7 +52,7 @@
   margin-left: 20px;
 }
 button:hover{
-  background-color: forestgreen;
+  background-color: cadetblue;
   cursor: pointer;
 }
 
@@ -106,8 +106,16 @@ body{
   font-family: "Helvetica Neue";
   text-align: center;
   color: cadetblue;
-  background-color: rgba(255,255,255,0.9);
+  background-color: rgba(255,255,255,2);
   margin-top: 0px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+
+h2 {
+  margin-bottom: 2px;
 }
 h5{
   margin-top: 0px;

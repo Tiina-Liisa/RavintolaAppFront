@@ -11,7 +11,8 @@ class Arviot extends Component {
     arvosana = (e) => {this.setState({arvosana:parseInt(e.target.value)})};
     arvioi = () => {
         if (this.state.arvio !== "" && this.state.arvosana !== "") {
-        this.props.arvioi(this.state);this.props.totuus()}};
+        this.props.arvioi(this.state);
+        setTimeout(this.props.totuus, 500)}};
 
     _renderObject(){
         return Object.entries(this.props.arviot).map(([key, value], i) => {

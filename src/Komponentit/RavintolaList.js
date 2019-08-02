@@ -17,7 +17,7 @@ class RavintolaList extends Component {
         return (
             <div>
                 <div className="ravintolahaku">
-                <input type="text" placeholder="Paikkakunta" size="20"onChange={this.hakuehto}/> <button onClick={this.handleClick}>Hae paikan mukaan</button>
+                <input type="text" placeholder="Paikkakunta" size="20"onChange={this.hakuehto}/> <button onClick={this.handleClick}>Hae paikkakunnan mukaan</button>
                     <button onClick={this.props.haeRavintolat}>Hae kaikki</button>
                     {ravintolat}
                 </div>
