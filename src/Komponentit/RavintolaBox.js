@@ -7,11 +7,12 @@ class RavintolaBox extends Component {
 
     state = {
         ravintolat:[],
-        arvostelut:[]
+        arvostelut:[],
+        kaikkiravintolat:[]
     }
     componentDidMount = ()=> {
         get(data => {
-            this.setState({ravintolat: data});
+            this.setState({ravintolat: data, kaikkiravintolat:data});
         })
         haeArviot(data => {
             this.setState({arvostelut: data});
@@ -27,7 +28,7 @@ class RavintolaBox extends Component {
         haeValitut = (paikka)=>{
         console.log(paikka.kaupunki)
             var ravintola =[];
-            this.state.ravintolat.filter(rafla => rafla.paikkakunta === paikka.kaupunki).map(rafla => ravintola.push(rafla));
+            this.state.kaikkiravintolat.filter(rafla => rafla.paikkakunta.toLowerCase() === paikka.kaupunki.toLowerCase()).map(rafla => ravintola.push(rafla));
             this.setState({ravintolat:ravintola})
         }
 

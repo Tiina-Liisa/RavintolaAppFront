@@ -9,7 +9,9 @@ class Arviot extends Component {
 
     uusiArvio = (e) =>{this.setState({arvio:e.target.value})};
     arvosana = (e) => {this.setState({arvosana:parseInt(e.target.value)})};
-    arvioi = ()=> {this.props.arvioi(this.state);this.props.totuus()}
+    arvioi = () => {
+        if (this.state.arvio !== "" && this.state.arvosana !== "") {
+        this.props.arvioi(this.state);this.props.totuus()}};
 
     _renderObject(){
         return Object.entries(this.props.arviot).map(([key, value], i) => {
@@ -29,6 +31,7 @@ class Arviot extends Component {
                 <input type="text" placeholder="Kirjoita arvio" onChange={this.uusiArvio} className="lomake"/>
 
                     <select name="Arvosana" id="" onChange={this.arvosana} value={this.state.arvosana} className="lomake">
+                        <option value="" disabled hidden>Arvosana</option>
                         <option value="5">5</option>
                         <option value="4">4</option>
                         <option value="3">3</option>
