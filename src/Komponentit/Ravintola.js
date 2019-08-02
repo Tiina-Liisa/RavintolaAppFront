@@ -21,7 +21,6 @@ class Ravintola extends Component {
 
     arviot =()=> {
         var taulu = [];
-    //    if (this.state.arviot.length === 0) {
             this.props.arvostelut.filter(arvio => arvio.ravintola === this.state.id).map(arvio => taulu.push(arvio));
             this.setState({arviot:taulu, wanted:true})};
 

@@ -11,7 +11,7 @@ function App() {
             <br/>
         <h5> HYVÄÄ RUOKAA MINNE MENETKIN! </h5>
       <h2> -  A P E A P I  - </h2>
-        <h4> @ Alatalo & Sorjonen & Wonnemann </h4>
+            <br/>
         </div>
       <RavintolaBox/>
     </div>
