@@ -20,10 +20,10 @@ class Ravintola extends Component {
 
 
     arviot =()=> {
-        var taulu = [];{
+        var taulu = [];
     //    if (this.state.arviot.length === 0) {
             this.props.arvostelut.filter(arvio => arvio.ravintola === this.state.id).map(arvio => taulu.push(arvio));
-            this.setState({arviot:taulu, wanted:true})}};
+            this.setState({arviot:taulu, wanted:true})};
 
 
         muutos = () =>{
@@ -40,7 +40,7 @@ class Ravintola extends Component {
                     <p> Kategoria: {this.props.ravintola.tyyppi}</p>
                     <p className="ravintolantiedot">Osoite: {this.props.ravintola.osoite}, {this.props.ravintola.paikkakunta}
                     <button className="napit" onClick={this.arviot}>Näytä arviot</button>
-                    <button className="napit" onClick={this.haeArvio}>Piilota arviot</button></p>
+                    <button className="napit" onClick={this.haeArvio} style={this.muutos()}>Piilota arviot</button></p>
                 </div>
                 <div style={this.muutos()}>
                 <Arviot arviot={this.state.arviot} arvioi={this.props.arvioi} id={this.state.id} totuus={this.arviot}/>
